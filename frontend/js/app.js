@@ -1,11 +1,12 @@
+const URLAPI = "https://35.92.115.150:3000"
 // load api 
 const loadProducts = () => {
   console.log(document.getElementById("search-input").value)
   const url = document.getElementById("search-input").value
-  ? `https://52.201.157.196/api/products/byMatch/${document.getElementById("search-input").value}`
+  ? `${URLAPI}/api/products/byMatch/${document.getElementById("search-input").value}`
   : document.getElementById('category').selectedIndex>0
-  ? `https://52.201.157.196/api/products/bycategory/${document.getElementById('category').selectedIndex}`
-  : `https://52.201.157.196/api/products`
+  ? `${URLAPI}/api/products/bycategory/${document.getElementById('category').selectedIndex}`
+  : `${URLAPI}/api/products`
     fetch(url)
     .then((response) => response.json())
     .then((data) => showProducts((data)))
@@ -40,7 +41,7 @@ const showProducts = (products) => {
     }
   const allProducts = products.map((pd) => pd);
   for (const product of allProducts) {
-    const image = product.url_image;
+    const image = product.url_image?product.url_image:"https://i.pinimg.com/originals/24/58/5f/24585fc9b7433a224a6ff5506e346969.png";
     const div = document.createElement("div");
     div.classList.add("product");
     div.innerHTML = `<div class="single-product">
@@ -115,7 +116,7 @@ const updateTotal = () => {
 
 // load single details 
 const loadDetails = (id) => {
-  const url = `https://52.201.157.196/api/products/${id}`
+  const url = `${URLAPI}/api/products/${id}`
   console.log(url)
   fetch(url)
     .then(res => res.json())
