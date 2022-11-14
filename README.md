@@ -14,4 +14,4 @@ Back-End
 La api rest fue contruida en nodejs con ayuda de librerias como typescript, express, dotenv, cors, mysql, helmet, deployada en aws lighsail con certificado ssl autoconfirmado. [Revise la documentacion de api con postman documentacion de api con postman](https://documenter.getpostman.com/view/7699521/UVeKp4S6)
 
 Front-End
-Se realizo un diseño minimalista con ayuda de boostrap, se uso funciones propias de javascript puro y se hosteo en netlify. image
+Se realizo un diseño minimalista con ayuda de boostrap, se uso funciones propias de javascript puro y se hosteo en netlify. ![image](https://user-images.githubusercontent.com/74202934/201578636-79d3640e-20e3-4b2f-9cfb-511408b661c1.png)
